@@ -1,22 +1,24 @@
 {
   "name": "@fylgja/sass",
   "version": "1.0.0",
-  "description": "The UtilKit is a small helper package. that can make complex tasks easier.",
+  "description": "Adds more SCSS super powers functions.",
   "homepage": "https://getfylgja.com/",
   "author": "Fylgja",
   "license": "MIT",
   "sass": "_index.scss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fylgja/fylgja-utilkit.git"
+    "url": "https://github.com/fylgja/fylgja-sass.git"
   },
   "bugs": {
-    "url": "https://github.com/fylgja/fylgja-utilkit/issues"
+    "url": "https://github.com/fylgja/fylgja-sass/issues"
   },
   "keywords": [
     "fylgja",
     "scss-functions",
-    "scss-mixins"
+    "str-replace",
+    "contrast",
+    "datauri-svg"
   ],
   "scripts": {
     "dev": "sass _tests_/index.scss _tests_/results.css --watch",
