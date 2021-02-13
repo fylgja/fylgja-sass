@@ -4,7 +4,7 @@
 
 Adds more SCSS super powers functions.
 
-This repo will add more functions that add options
+This repo will add more functions that adds options
 not found in the core sass project.
 
 - [Installation](#installation)
