@@ -1,0 +1,88 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:string";
+
+/// Replace part of a string with new value(s)
+///
+/// @group math
+///
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace - New value
+/// @return {String} - Updated string
+@function replace($string, $search, $replace: "") {
+    $index: string.index($string, $search);
+    @if $index {
+        $start-point: string.slice($string, 1, $index - 1);
+        $end-point: replace(
+            string.slice($string, $index + string.length($search)),
+            $search,
+            $replace
+        );
+        @return $start-point + $replace + $end-point;
+    }
+    @return $string;
+}
+
+/// Encode Unsafe urls to safe urls
+/// Handy for using inline background images
+///
+/// @group math
+/// @link https://codepen.io/jakob-e/pen/doMoML - based on
+///
+/// @param {String} $svg - svg as string
+/// @return {String} - dataUri svg
+@function url-encode($string, $safe-mode: false) {
+    // Chunk up string in order to avoid
+    // "stack level too deep" error
+    $encoded: "";
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(string.length($string) / $slice);
+    @for $i from 1 through $loops {
+        $chunk: string.slice($string, $index, $index + $slice - 1);
+        // Encode
+        $chunk: replace($chunk, '"', "'");
+        $chunk: replace($chunk, "%", "%25");
+        $chunk: replace($chunk, "#", "%23");
+        $chunk: replace($chunk, "{", "%7B");
+        $chunk: replace($chunk, "}", "%7D");
+        $chunk: replace($chunk, "<", "%3C");
+        $chunk: replace($chunk, ">", "%3E");
+
+        // The maybe list (add on documented fail)
+        // Not needed in most cases
+        // And will make you encode less readable and editable
+        @if $safe-mode {
+            $chunk: replace("&", "%26");
+            $chunk: replace("|", "%7C");
+            $chunk: replace("[", "%5B");
+            $chunk: replace("]", "%5D");
+            $chunk: replace("^", "%5E");
+            $chunk: replace("`", "%60");
+            $chunk: replace(";", "%3B");
+            $chunk: replace("?", "%3F");
+            $chunk: replace(":", "%3A");
+            $chunk: replace("@", "%40");
+            $chunk: replace("=", "%3D");
+        }
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+    @return $encoded;
+}
+
+/// Use SVG anywhere as dataUri (inline background)
+/// @group math
+///
+/// @param {String} $svg - SVG string. The `xmlns` attribute is added for you.
+@function svg-url($svg, $safe-mode: false) {
+    // Add missing namespace, if missing
+    $namespace: 'xmlns="http://www.w3.org/2000/svg"';
+    @if not string.index($string: $svg, $substring: $namespace) {
+        $svg: replace($svg, "<svg", "<svg #{$namespace}");
+    }
+
+    @return url("data:image/svg+xml,#{url-encode($svg)}");
+}

@@ -1,0 +1,30 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+/// Extract value based on shorthand sizing property, e.g. "1rem 2px 1vw"
+/// @param {List|Number} $value - Value to analyze
+/// @param {String} $side - Side to return, options: top, right, bottom or left
+/// @return {Number} - Single value based on input from $value and $side
+@function nth-side($value, $side) {
+    $length: length($value);
+
+    @if $length == 1 {
+        @return $value;
+    }
+
+    @if ($side != top) and
+        ($side != right) and
+        ($side != bottom) and
+        ($side != left)
+    {
+        @error "$side only allows the options: top, right, bottom or left";
+    }
+
+    /* prettier-ignore */
+    @return map-get((
+        top: nth($value, 1),
+        right: nth($value, 2),
+        bottom: if($length >= 3, nth($value, 3), nth($value, 1)),
+        left: if($length >= 4, nth($value, 4), nth($value, 2)),
+    ), $side);
+}

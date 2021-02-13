@@ -1,0 +1,16 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+/// Removes the unit (e.g. px, em, rem) from a value.
+/// Returning the number only
+///
+/// @group math
+///
+/// @param {Number} $number - Number to strip unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+    @if (type-of($number) == "number") and not (unitless($number)) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
