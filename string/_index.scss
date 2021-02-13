@@ -3,9 +3,9 @@
 
 @use "sass:string";
 
-/// Replace part of a string with new value(s)
+/// Replace part of a string with new value.
 ///
-/// @group math
+/// @group string
 ///
 /// @param {String} $string - Initial string
 /// @param {String} $search - Substring to replace
@@ -28,11 +28,11 @@
 /// Encode Unsafe urls to safe urls
 /// Handy for using inline background images
 ///
-/// @group math
+/// @group string
 /// @link https://codepen.io/jakob-e/pen/doMoML - based on
 ///
 /// @param {String} $svg - svg as string
-/// @return {String} - dataUri svg
+/// @return {String} - save encoded url
 @function url-encode($string, $safe-mode: false) {
     // Chunk up string in order to avoid
     // "stack level too deep" error
@@ -74,9 +74,10 @@
 }
 
 /// Use SVG anywhere as dataUri (inline background)
-/// @group math
+/// @group string
 ///
 /// @param {String} $svg - SVG string. The `xmlns` attribute is added for you.
+/// @return {String} - dataUri svg
 @function svg-url($svg, $safe-mode: false) {
     // Add missing namespace, if missing
     $namespace: 'xmlns="http://www.w3.org/2000/svg"';

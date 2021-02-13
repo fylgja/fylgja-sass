@@ -1,0 +1,9 @@
+@use "../index" as *;
+
+.import {
+    $long: 10px 11px 9px;
+    content: str-replace("Hello World", "World", "🌍");
+    padding-top: list-nth-side($long, top);
+    color: color-gray();
+    line-height: math-strip-unit(1em);
+}

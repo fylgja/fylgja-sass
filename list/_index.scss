@@ -2,6 +2,7 @@
 // Licensed under MIT Open Source
 
 /// Extract value based on shorthand sizing property, e.g. "1rem 2px 1vw"
+///
 /// @param {List|Number} $value - Value to analyze
 /// @param {String} $side - Side to return, options: top, right, bottom or left
 /// @return {Number} - Single value based on input from $value and $side

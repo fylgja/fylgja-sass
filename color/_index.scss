@@ -37,6 +37,8 @@
     @return math.max($backLum, $foreLum) / math.min($backLum, $foreLum);
 }
 
+/// Sets an dark or light color based on the contrast.
+///
 /// @group color
 /// @require {Function} contrast-ratio
 /// @require {Variable} config-contrast
@@ -80,22 +82,12 @@
     }
 }
 
-/// Get the color black with a given `$opacity`.
+/// Get a specific gray based an a given strength
 ///
 /// @group color
 ///
-/// @parameter {Number} $opacity - Opacity percentage
-/// @return {Color} - black rgba color with a specific opacity
-@function black($opacity: 1) {
-    @return rgba(black, $opacity);
-}
-
-/// Get the color white with a given `$opacity`.
-///
-/// @group color
-///
-/// @parameter {Number} $opacity - Opacity percentage
-/// @return {Color} - white rgba color with a specific opacity
-@function white($opacity: 1) {
-    @return rgba(white, $opacity);
+/// @parameter {Number} $strength
+/// @return {Color} - gray color
+@function gray($strength: 50%) {
+    @return color.adjust(black, $lightness: $strength);
 }

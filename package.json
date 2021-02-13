@@ -5,7 +5,6 @@
   "homepage": "https://getfylgja.com/",
   "author": "Fylgja",
   "license": "MIT",
-  "style": "utilkit.css",
   "sass": "_index.scss",
   "repository": {
     "type": "git",

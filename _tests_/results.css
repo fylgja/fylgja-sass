@@ -1,4 +1,11 @@
 @charset "UTF-8";
+.import {
+  content: "Hello 🌍";
+  padding-top: 10px;
+  color: gray;
+  line-height: 1;
+}
+
 /* Color */
 .contrast {
   background-color: #2196f3;
@@ -7,14 +14,11 @@
   color: #fff;
 }
 
-.black-opacity {
-  color: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.1);
-}
-
-.white-opacity {
-  color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.1);
+.gray {
+  color: #1a1a1a;
+  color: #1a1a1a;
+  color: gray;
+  color: gray;
 }
 
 /* List */
