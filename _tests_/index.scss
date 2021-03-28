@@ -1,4 +1,7 @@
+@use "sass:map" as m;
+
 @use "../color" as color;
+@use "../map";
 @use "../list";
 @use "../math";
 @use "../string" as str;
@@ -18,6 +21,21 @@
     color: color.gray(10);
     color: color.gray(50%);
     color: color.gray();
+}
+
+/* Map */
+.negative-map {
+    $map: map.negative(
+        (
+            "0": 0,
+            "1": 0.875em,
+            "2": 1em,
+        ),
+        $change-key: true
+    );
+
+    margin-right: m.get($map, "1");
+    margin-left: m.get($map, "n1");
 }
 
 /* List */

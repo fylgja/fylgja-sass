@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .import {
   content: "Hello 🌍";
+  margin-right: -0.875em;
   padding-top: 10px;
   color: gray;
   line-height: 1;
@@ -19,6 +20,11 @@
   color: #1a1a1a;
   color: gray;
   color: gray;
+}
+
+/* Map */
+.negative-map {
+  margin-left: -0.875em;
 }
 
 /* List */

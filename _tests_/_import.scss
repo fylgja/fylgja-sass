@@ -1,8 +1,17 @@
 @use "../index" as *;
+@use "sass:map";
 
 .import {
     $long: 10px 11px 9px;
+    $map: map-negative(
+        (
+            "0": 0,
+            "1": 0.875em,
+            "2": 1em,
+        )
+    );
     content: str-replace("Hello World", "World", "🌍");
+    margin-right: map.get($map, "1");
     padding-top: list-nth-side($long, top);
     color: color-gray();
     line-height: math-strip-unit(1em);

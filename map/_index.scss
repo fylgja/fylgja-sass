@@ -1,0 +1,23 @@
+// Fylgja (getfylgja.com)
+// Licensed under MIT Open Source
+
+@use "sass:map";
+
+/// Converters a map with unit values to a negative unit version
+///
+/// @param {Map} $map - map with unit values
+/// @return {Map} - with native unit values
+@function negative($map, $change-key: false) {
+    $result: ();
+
+    @each $key, $value in $map {
+        $new-key: if($change-key, "n" + $key, $key);
+
+        @if $key != 0 {
+            // prettier-ignore
+            $result: map.merge($result, ($new-key: -$value));
+        }
+    }
+
+    @return $result;
+}
