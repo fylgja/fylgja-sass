@@ -31,7 +31,7 @@ Then include the specific sass typed function via;
 }
 ```
 
-We advice to use the library with a prefixed `@use`.
+We advise to use the library with a prefixed `@use`.
 Similar to an `@use "sass:string"`.
 
 This package offers the following functions.
