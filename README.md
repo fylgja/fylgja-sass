@@ -1,14 +1,10 @@
-# Fylgja - Sass
+# Fylgja - Sass Extend
 
 [![NPM version](https://img.shields.io/npm/v/@fylgja/sass.svg)](https://www.npmjs.org/package/@fylgja/sass)
 
-Adds more SCSS super powers functions.
+Adds more SCSS super power functions.
 
-This repo will add more functions that adds options
-not found in the core sass project.
-
-- [Installation](#installation)
-- [How to use](#how-to-use)
+This repo will add more functions and adds options not found in the core sass project.
 
 ## Installation
 
@@ -19,6 +15,7 @@ npm install @fylgja/sass
 ## How to use
 
 Since this is a Sass function library it require only usages where it is needed.
+
 So if you need to string replace something.
 
 Then include the specific sass typed function via;
@@ -31,7 +28,7 @@ Then include the specific sass typed function via;
 }
 ```
 
-We advise to use the library with a prefixed `@use`.
+We advice to use the library with a prefixed `@use`.
 Similar to an `@use "sass:string"`.
 
 This package offers the following functions.
