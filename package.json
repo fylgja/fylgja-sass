@@ -21,8 +21,8 @@
     "datauri-svg"
   ],
   "scripts": {
-    "dev": "sass _tests_/index.scss _tests_/results.css --watch",
-    "build": "sass _tests_/index.scss _tests_/results.css"
+    "test": "sass _tests_/index.scss _tests_/results.css",
+    "test:dev": "sass _tests_/index.scss _tests_/results.css --watch"
   },
   "devDependencies": {
     "sass": "^1.43.4"
