@@ -23,5 +23,8 @@
   "scripts": {
     "dev": "sass _tests_/index.scss _tests_/results.css --watch",
     "build": "sass _tests_/index.scss _tests_/results.css"
+  },
+  "devDependencies": {
+    "sass": "^1.43.4"
   }
 }
