@@ -2,6 +2,7 @@
 // Licensed under MIT Open Source
 
 @use "sass:string";
+@use "sass:math";
 
 /// Replace part of a string with new value.
 ///
@@ -39,7 +40,7 @@
     $encoded: "";
     $slice: 2000;
     $index: 0;
-    $loops: ceil(string.length($string) / $slice);
+    $loops: math.ceil(math.div(string.length($string), $slice));
     @for $i from 1 through $loops {
         $chunk: string.slice($string, $index, $index + $slice - 1);
         // Encode

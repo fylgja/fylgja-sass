@@ -1,6 +1,9 @@
 // Fylgja (getfylgja.com)
 // Licensed under MIT Open Source
 
+@use "sass:math";
+@use "sass:meta";
+
 /// Removes the unit (e.g. px, em, rem) from a value.
 /// Returning the number only
 ///
@@ -9,8 +12,12 @@
 /// @param {Number} $number - Number to strip unit from
 /// @return {Number} - Unitless number
 @function strip-unit($number) {
-    @if (type-of($number) == "number") and not (unitless($number)) {
-        @return $number / ($number * 0 + 1);
+    $has-unit: math.is-unitless($number);
+    $type: meta.type-of($number);
+
+    @if ($type == "number") and not ($has-unit) {
+        @return math.div($number, ($number * 0 + 1));
     }
+
     @return $number;
 }

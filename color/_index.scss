@@ -34,7 +34,10 @@
 @function contrast-ratio($back, $front) {
     $backLum: luminance($back) + 0.05;
     $foreLum: luminance($front) + 0.05;
-    @return math.max($backLum, $foreLum) / math.min($backLum, $foreLum);
+    @return math.div(
+        math.max($backLum, $foreLum),
+        math.min($backLum, $foreLum)
+    );
 }
 
 /// Sets an dark or light color based on the contrast.
