@@ -1,6 +1,8 @@
 // Fylgja (getfylgja.com)
 // Licensed under MIT Open Source
 
+@use "sass:list";
+
 /// Extract value based on shorthand sizing property, e.g. "1rem 2px 1vw"
 ///
 /// @param {List|Number} $value - Value to analyze
@@ -23,9 +25,9 @@
 
     /* prettier-ignore */
     @return map-get((
-        top: nth($value, 1),
-        right: nth($value, 2),
-        bottom: if($length >= 3, nth($value, 3), nth($value, 1)),
-        left: if($length >= 4, nth($value, 4), nth($value, 2)),
+        top: list.nth($value, 1),
+        right: list.nth($value, 2),
+        bottom: if($length >= 3, list.nth($value, 3), list.nth($value, 1)),
+        left: if($length >= 4, list.nth($value, 4), list.nth($value, 2)),
     ), $side);
 }
