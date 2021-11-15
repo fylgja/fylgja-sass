@@ -43,6 +43,7 @@ This package offers the following functions.
 | gray           | color  | Get a specific gray based an a given precentage   |
 | nth-side       | list   | Extract value based on shorthand sizing property  |
 | strip-unit     | math   | Removes the unit (e.g. px, em, rem) from a value  |
+| negative       | map    | Converters a map with units to a negative units   |
 | replace        | string | Replace part of a string with new value           |
 | url-encode     | string | Encode Unsafe urls to safe urls                   |
 | svg-url        | string | Use SVG anywhere as dataUri (inline background)   |
