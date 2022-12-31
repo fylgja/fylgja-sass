@@ -1,11 +1,11 @@
 {
   "name": "@fylgja/sass",
   "version": "2.0.1",
-  "description": "Adds more SCSS super powers functions.",
+  "description": "Add more super powers to your Sass project",
   "homepage": "https://getfylgja.com/",
   "author": "Fylgja",
   "license": "MIT",
-  "sass": "_index.scss",
+  "main": "_index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/fylgja/fylgja-sass.git"
@@ -25,6 +25,6 @@
     "test:dev": "sass _tests_/index.scss _tests_/results.css --watch"
   },
   "devDependencies": {
-    "sass": "^1.43.4"
+    "sass": "^1.57.1"
   }
 }
