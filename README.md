@@ -1,6 +1,6 @@
 # Fylgja - Sass Extend
 
-[![NPM version](https://img.shields.io/npm/v/@fylgja/sass.svg)](https://www.npmjs.org/package/@fylgja/sass)
+[![NPM version](https://img.shields.io/npm/v/@fylgja/sass.svg?style=flat-square)](https://www.npmjs.org/package/@fylgja/sass)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fylgja/fylgja-sass/test.yml?branch=main&color=%2343a047&style=flat-square)](https://github.com/fylgja/fylgja-sass/actions/workflows/test.yml)
 [![License](https://img.shields.io/github/license/fylgja/sass?color=%23234&style=flat-square)](/LICENSE)
 
